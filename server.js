@@ -10,7 +10,12 @@ var app = express();
 app.use(cors());
 app.use('/public', express.static(process.cwd() + '/public'));
 
-app.get('/', function (req, res) {
+app.post('/api/fileanalyse', (req, res)=>{
+	console.log(req.body);
+	res.send("hello");
+})
+
+app.get('/*', function (req, res) {
      res.sendFile(process.cwd() + '/views/index.html');
   });
 
